@@ -1,3 +1,5 @@
+using AutoMapper;
+using GeekShopping.ProductAPI.Config;
 using GeekShopping.ProductAPI.Models.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,6 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MySQLContext>(options => options.UseMySql("server=localhost; database=geek_shopping_product_api;uid=root;pwd=dias0502",Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.30-mysql")));
 var app = builder.Build();
+IMapper mapper = MappingConfig.RegisterMaps().CreateMapper();
+builder.Services.AddSingleton(mapper);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());    
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
