@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using GeekShopping.ProductAPI.Data.ValueObjects;
+using GeekShopping.ProductAPI.Models;
 using GeekShopping.ProductAPI.Models.Context;
+using Microsoft.EntityFrameworkCore;
+using System.Reflection.Metadata.Ecma335;
 
 namespace GeekShopping.ProductAPI.Repository
 {
@@ -11,12 +14,29 @@ namespace GeekShopping.ProductAPI.Repository
 
         public ProductRepository(MySQLContext context, IMapper mapper)
         {
-            _context = context; 
-            _mapper = mapper; 
+            _context = context;
+            _mapper = mapper;
 
         }
 
+        public async Task<IEnumerable<ProductVO>> FindAll()
+        {
+            List<Product> products = await _context.Products.ToListAsync();
+            return _mapper.Map<List<ProductVO>>(products);
+        }
+
+        public async Task<ProductVO> FindById(long id)
+        {
+            Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+            return _mapper.Map<ProductVO>(product);
+        }
+
         public Task<ProductVO> Create(ProductVO vo)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ProductVO> Update(ProductVO vo)
         {
             throw new NotImplementedException();
         }
@@ -26,19 +46,6 @@ namespace GeekShopping.ProductAPI.Repository
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<ProductVO>> FindAll()
-        {
-            throw new NotImplementedException();
-        }
 
-        public Task<ProductVO> FindById(long id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<ProductVO> Update(ProductVO vo)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
