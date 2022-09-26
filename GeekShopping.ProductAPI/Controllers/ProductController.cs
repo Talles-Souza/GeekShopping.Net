@@ -43,7 +43,6 @@ namespace GeekShopping.ProductAPI.Controllers
         {
             if (vo == null) return BadRequest();
             var product = await _repository.Update(vo);
-
             return Ok(product);
         }
 
