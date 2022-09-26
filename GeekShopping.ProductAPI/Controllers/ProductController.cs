@@ -47,6 +47,13 @@ namespace GeekShopping.ProductAPI.Controllers
             return Ok(product);
         }
 
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ProductVO>> Delete(long id)
+        {
+           var status = await _repository.Delete(id);  
+            if(!status) return BadRequest();
+            return Ok(status);  
+        }
 
     }
 }
