@@ -12,7 +12,7 @@ namespace GeekShopping.ProductAPI.Models.Context
         {
             modelBuilder.Entity<Product>().HasData(new Product
             {
-                Id = 2,
+                Id = 5,
                 Name = "Name",
                 Price = new decimal (69.9),
                 Description = "alguma coisa descrita aqui",
@@ -20,30 +20,6 @@ namespace GeekShopping.ProductAPI.Models.Context
                 CategoryName="camisa"
             });
             modelBuilder.Entity<Product>().HasData(new Product
-            {
-                Id = 3,
-                Name = "Name",
-                Price = new decimal(69.9),
-                Description = "alguma coisa descrita aqui",
-                ImageUrl = "ainda nao tem",
-                CategoryName = "camisa"
-            }); modelBuilder.Entity<Product>().HasData(new Product
-            {
-                Id = 4,
-                Name = "Name",
-                Price = new decimal(69.9),
-                Description = "alguma coisa descrita aqui",
-                ImageUrl = "ainda nao tem",
-                CategoryName = "camisa"
-            }); modelBuilder.Entity<Product>().HasData(new Product
-            {
-                Id = 5,
-                Name = "Name",
-                Price = new decimal(69.9),
-                Description = "alguma coisa descrita aqui",
-                ImageUrl = "ainda nao tem",
-                CategoryName = "camisa"
-            }); modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 6,
                 Name = "Name",
@@ -62,6 +38,30 @@ namespace GeekShopping.ProductAPI.Models.Context
             }); modelBuilder.Entity<Product>().HasData(new Product
             {
                 Id = 8,
+                Name = "Name",
+                Price = new decimal(69.9),
+                Description = "alguma coisa descrita aqui",
+                ImageUrl = "ainda nao tem",
+                CategoryName = "camisa"
+            }); modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 9,
+                Name = "Name",
+                Price = new decimal(69.9),
+                Description = "alguma coisa descrita aqui",
+                ImageUrl = "ainda nao tem",
+                CategoryName = "camisa"
+            }); modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 10,
+                Name = "Name",
+                Price = new decimal(69.9),
+                Description = "alguma coisa descrita aqui",
+                ImageUrl = "ainda nao tem",
+                CategoryName = "camisa"
+            }); modelBuilder.Entity<Product>().HasData(new Product
+            {
+                Id = 11,
                 Name = "Name",
                 Price = new decimal(69.9),
                 Description = "alguma coisa descrita aqui",
