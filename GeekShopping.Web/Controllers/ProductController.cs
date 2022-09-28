@@ -23,7 +23,7 @@ namespace GeekShopping.Web.Controllers
             return View();
         } 
         [HttpPost]  
-        public async Task<ActionResult> Create(ProductModel model)
+        public async Task<ActionResult> ProductCreate(ProductModel model)
         {
             if (ModelState.IsValid)
             {

@@ -7,7 +7,7 @@ namespace GeekShopping.Web
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.ConfigureS
+            
             AppDomain currentDomain = AppDomain.CurrentDomain;
             // Add services to the container.
             builder.Services.AddControllersWithViews();
