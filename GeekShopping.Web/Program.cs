@@ -13,7 +13,7 @@ namespace GeekShopping.Web
             builder.Services.AddControllersWithViews();
             builder.Services.AddMvc();
             builder.Services.AddHttpClient<IProductService, ProductService>(c =>
-            c.BaseAddress = new Uri("http://localhost:5252"));  
+            c.BaseAddress = new Uri("http://localhost:4440"));  
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -21,6 +21,7 @@ namespace GeekShopping.Web
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();

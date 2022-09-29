@@ -1,21 +1,13 @@
-﻿{
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:7768",
-      "sslPort": 0
-    }
-  },
+{
   "profiles": {
     "GeekShopping.IdentityServer": {
       "commandName": "Project",
-      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5031",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      },
+      "dotnetRunMessages": true,
+      "applicationUrl": "https://localhost:4435;http://localhost:4436"
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -23,6 +15,24 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "WSL": {
+      "commandName": "WSL2",
+      "launchBrowser": true,
+      "launchUrl": "https://localhost:4435",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:4435;http://localhost:4436"
+      },
+      "distributionName": ""
+    }
+  },
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:7768",
+      "sslPort": 4435
     }
   }
 }
